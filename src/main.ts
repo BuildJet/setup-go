@@ -91,6 +91,7 @@ export async function run() {
     const goEnv = (cp.execSync(`${goPath} env`) || '').toString();
     core.info(goEnv);
     core.endGroup();
+    process.exit(0);
   } catch (error) {
     core.setFailed((error as Error).message);
   }
